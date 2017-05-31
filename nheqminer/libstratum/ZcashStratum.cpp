@@ -792,7 +792,7 @@ void ZcashMiner<CPUSolver, CUDASolver, OPENCLSolver>::doBenchmark(int hashes, in
 	for (; i < (opencl_contexts.size() + cuda_contexts.size() + cpu_contexts.size()); ++i)
 		bthreads[i] = std::thread(boost::bind(&benchmark_thread<OPENCLSolver>, i, *opencl_contexts.at(i - cpu_contexts.size() - cuda_contexts.size())));
 
-	sleep(1);
+	Sleep(1);
 
 	BOOST_LOG_TRIVIAL(info) << "Benchmark starting... this may take several minutes, please wait...";
 
